@@ -101,6 +101,11 @@ Resources:
   rLinuxEc2:
     Type: AWS::EC2::Instance
     Properties:
+      Metadata:
+        guard:
+          SuppressedRules:
+            - 'EC2_INSTANCE_DETAILED_MONITORING_ENABLED'
+
       ImageId: !Ref pOperatingSystem
       IamInstanceProfile: !Ref rec2InstanceProfile
       Monitoring: false
